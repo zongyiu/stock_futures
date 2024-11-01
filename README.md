@@ -24,6 +24,24 @@ To use the tools in this repository, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
+### Install Talib
+
+https://github.com/TA-Lib/ta-lib-python
+
+#### Step 1 prepare c library
+```
+$ wget https://sourceforge.net/projects/ta-lib/files/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz/download -O ta-lib-0.4.0-src.tar.gz
+$ tar -xzf ta-lib-0.4.0-src.tar.gz
+$ cd ta-lib/
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install
+```
+#### Step 2 pip install
+
+$ pip install TA-Lib
+
+
 
 ## Usage
 1. Load DB from my private resource:

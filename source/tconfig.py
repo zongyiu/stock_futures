@@ -1,0 +1,9 @@
+# Kbar Color 
+kbuy = '#FF0000'#'#9C27B0'
+ksell = '#00FF00'#'#00695C'
+kavg = 'black'
+kbase = 'gray'
+kband = 'skyblue'
+kline = 'green'
+dline = 'blue'
+tfont = 'black'

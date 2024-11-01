@@ -157,6 +157,20 @@ def get_previous_n_data_range(edate, num = 1, db_path = "./db/future_kbars.db", 
 def get_daily_kbars_with_n_data_range(edate, num = 1, db_path = "./db/future_kbars.db", table = 'kbars'):
     
     df =  get_previous_n_data_range(edate, num , db_path, table)
+    if df is None:
+        return pd.DataFrame()
+    df['date'] = pd.to_datetime(df['date']).dt.date
+    daily_kbars = df.groupby('date').agg({
+        'Open': 'first',
+        'High': 'max',
+        'Low': 'min',
+        'Close': 'last',
+        'Volume': 'sum',
+        'Amount': 'sum'
+    }).reset_index()
+
+    return daily_kbars
+    
 
     
 
